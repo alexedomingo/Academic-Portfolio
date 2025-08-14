@@ -1,9 +1,9 @@
 # Academic Portfolio
 
-# Franklin D. Roosevelt Rhetoric Analysis
+## Franklin D. Roosevelt Rhetoric Analysis
 Jupyter Notebook Linked
 
-# Predicting Policyholder Retention
+## Predicting Policyholder Retention
 Confidential Client as per UConn Academics,. Below is the LightGBVM Code
 
     import pandas as pd
