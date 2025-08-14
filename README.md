@@ -6,27 +6,27 @@ Jupyter Notebook Linked
 # Predicting Policyholder Retention
 Confidential Client as per UConn Academics,. Below is the LightGBVM Code
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import shap
-import lightgbm
-from lightgbm import LGBMClassifier
-
-from sklearn.model_selection import StratifiedKFold
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import (
-    f1_score, roc_auc_score, roc_curve, classification_report,
-    precision_recall_curve, brier_score_loss, average_precision_score
-)
-
-from imblearn.combine import SMOTETomek, SMOTEENN
-from imblearn.under_sampling import RandomUnderSampler
-
-def run_lgbm_cv_with_shap(dfdrop, target_col, resampler, resampler_name, n_splits=5):
-    X = dfdrop.drop(columns=target_col)
-    y = dfdrop[target_col]
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import shap
+    import lightgbm
+    from lightgbm import LGBMClassifier
+    
+    from sklearn.model_selection import StratifiedKFold
+    from sklearn.preprocessing import LabelEncoder
+    from sklearn.metrics import (
+        f1_score, roc_auc_score, roc_curve, classification_report,
+        precision_recall_curve, brier_score_loss, average_precision_score
+    )
+    
+    from imblearn.combine import SMOTETomek, SMOTEENN
+    from imblearn.under_sampling import RandomUnderSampler
+    
+    def run_lgbm_cv_with_shap(dfdrop, target_col, resampler, resampler_name, n_splits=5):
+        X = dfdrop.drop(columns=target_col)
+        y = dfdrop[target_col]
 
     skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
 
